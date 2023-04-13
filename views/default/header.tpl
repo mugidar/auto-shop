@@ -1,17 +1,21 @@
-<html>
-    <head>
-        <title>{$pageTitle}</title>
-		<link rel="stylesheet" href="{$teplateWebPath}css/main.css" type="text/css" />
-    </head>    
-<body>
-	<div id="header">
-		<h1>my shop - интернет магазин</h1>
-	</div>
-	
-	
- {include file='leftcolumn.tpl'}   	
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{$TemplateWebPath}css/main.css"
+      type="text/css"
+    />
+    <script src="/js/jquery-3.6.4.min.js"></script>
+    <script src="/js/main.js"></script>
 
-	
-<div id="centerColumn">
+  </head>
+  <body>
+    <header id="header">
+      <h1><a href="/">АВТІВОЧКА</a></h1>
+    </header>
+    <main>
+    {include file='leftcolumn.tpl'}
 
-	centerColumn
+    <div id="centerColumn">

@@ -1,9 +1,9 @@
-</div> {*/centerColumn*}
+</main> {*/centerColumn*}
 
 
-<div id="footer">
+<footer id="footer">
     Footer
-</div>
+</footer>
 
 </body>
 </html>	 

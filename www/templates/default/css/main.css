@@ -1,41 +1,222 @@
-body{
-	padding: 0 ;
-	display: block;
+.price {
+  color: green;
+  font-family: fantasy;
+  font-style: oblique;
+  font-size: 16px;
 }
 
-.hideme{
-    display: none;
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-#header{
-	height: 70px;
-	text-align: center;
+header {
+  padding: 20px 0;
 }
 
-#leftColumn{
-	width: 200px;
-	float: left;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-#leftMenu, #loginBox, #registerBox{
-	padding-bottom: 20px;
+main {
+  display: flex;
+  flex: 1;
 }
 
-#centerColumn{
-	width: 600px;
-	float: left;
-    padding-left: 90px;
+footer {
+  background-color: gray;
+  padding: 50px 0;
+  flex: 0;
+  box-shadow: 0 0 10px;
+  clear: both;
 }
 
-#footer{
-	clear: both;
+.hideme {
+  display: none;
 }
 
-.menuCaption{
-	padding: 3px;
-	font-weight: bold; 
+#header {
+  height: 70px;
+  text-align: center;
+  background-color: gray;
+  box-shadow: 0 0 10px black;
 }
 
-.cartBox{
-	padding: 5px 0px 5px 0px;
+#leftMenu,
+#loginBox,
+#registerBox {
+  padding-bottom: 20px;
 }
+
+#footer {
+  clear: both;
+  z-index: 4;
+}
+
+.cartBox {
+  padding: 5px 0px 5px 0px;
+}
+
+#leftColumn {
+  box-shadow: 0 0 10px;
+  height: 100%;
+  float: left;
+  background-color: rgb(59, 59, 59);
+  padding: 15px;
+  position: sticky;
+}
+#leftColumn #leftMenu {
+  width: 200px;
+  padding: 15px;
+  background-color: gray;
+  border-radius: 8px;
+}
+#leftColumn #leftMenu ul {
+  list-style: none;
+}
+#leftColumn #leftMenu a {
+  color: black;
+  text-decoration: none;
+}
+#leftColumn #leftMenu .menu_list-title {
+  font-size: 28px;
+}
+#leftColumn #leftMenu .menu_list-title h5 a {
+  text-shadow: 0 0 10px;
+  font-weight: 900;
+  color: white;
+}
+#leftColumn #leftMenu .menuCaption {
+  padding: 3px;
+  font-weight: bold;
+}
+
+#centerColumn {
+  width: 100%;
+  float: left;
+  padding: 30px;
+}
+#centerColumn .items_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+#centerColumn .items_wrapper .main_page_item {
+  text-decoration: none;
+  width: 230px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+}
+#centerColumn .items_wrapper .main_page_item a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+#centerColumn .items_wrapper .main_page_item img {
+  background-color: gray;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+#centerColumn .items_wrapper .main_page_item p {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.category_item {
+  text-decoration: none;
+  width: 230px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+}
+.category_item a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+.category_item img {
+  background-color: gray;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.category_item p {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.general_categories {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 0 0 10px;
+}
+.general_categories a {
+  text-decoration: none;
+  color: rgba(0, 8, 255, 0.665);
+}
+
+.car_page {
+  background-color: gray;
+  border-radius: 15px;
+  box-shadow: 0 0 10px;
+  height: 100%;
+  width: 100%;
+}
+.car_page .car_info {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 100%;
+  padding: 50px;
+}
+.car_page .car_info .car_info_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.car_page .car_info .car_info_wrapper .car_information {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.car_page .car_info .car_info_wrapper .car_information .buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.car_page .car_info .car_info_wrapper .car_information .buy .price {
+  font-size: 32px;
+  color: rgb(45, 215, 45);
+}
+.car_page .car_info .car_info_wrapper .car_information .buy button {
+  box-shadow: 0 0 10px;
+  border: 0;
+  border-radius: 13px;
+  padding: 10px 20px;
+}
+.car_page .car_info .car_info_wrapper .car_information .buy .removeCartBtn {
+  display: none;
+}
+.car_page .car_info .car_info_wrapper img {
+  border: 2px solid rgba(0, 0, 0, 0.419);
+  border-radius: 8px;
+  flex: 1;
+  object-fit: contain;
+  height: 375px;
+  width: 600px;
+}
+
+/*# sourceMappingURL=main.css.map */

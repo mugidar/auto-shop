@@ -1,0 +1,214 @@
+$card_item_width: 230px;
+$card_item_height: 270px;
+
+@mixin card_item-size {
+  width: 230px;
+  height: 270px;
+}
+@mixin card_item {
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+  }
+  @include card_item-size;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    background-color: gray;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  p {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.price {
+  color: green;
+  font-family: fantasy;
+  font-style: oblique;
+  font-size: 16px;
+}
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+header {
+  padding: 20px 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+footer {
+  background-color: gray;
+  padding: 50px 0;
+  flex: 0;
+  box-shadow: 0 0 10px;
+  clear: both;
+}
+
+.hideme {
+  display: none;
+}
+
+#header {
+  height: 70px;
+  text-align: center;
+  background-color: gray;
+  box-shadow: 0 0 10px black;
+}
+
+#leftMenu,
+#loginBox,
+#registerBox {
+  padding-bottom: 20px;
+}
+
+#footer {
+  clear: both;
+  z-index: 4;
+}
+
+.cartBox {
+  padding: 5px 0px 5px 0px;
+}
+
+#leftColumn {
+  box-shadow: 0 0 10px;
+  height: 100%;
+  float: left;
+  background-color: rgb(59, 59, 59);
+  padding: 15px;
+position: sticky;
+  #leftMenu {
+    width: 200px;
+    padding: 15px;
+    background-color: gray;
+    border-radius: 8px;
+    ul {
+      list-style: none;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .menu_list-title {
+      font-size: 28px;
+
+      h5 {
+        a {
+          text-shadow: 0 0 10px;
+          font-weight: 900;
+          color: white;
+        }
+      }
+    }
+    .menuCaption {
+      padding: 3px;
+      font-weight: bold;
+    }
+  }
+}
+
+#centerColumn {
+  width: 100%;
+  float: left;
+  padding: 30px;
+  .items_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+
+    .main_page_item {
+      @include card_item;
+    }
+  }
+}
+
+.category_item {
+  @include card_item;
+}
+
+.general_categories {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 0 0 10px;
+
+  a {
+    text-decoration: none;
+    color: rgba(0, 8, 255, 0.665);
+  }
+}
+
+.car_page {
+  background-color: gray;
+  border-radius: 15px;
+  box-shadow: 0 0 10px;
+  height: 100%;
+  width: 100%;
+
+  .car_info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    padding: 50px;
+    .car_info_wrapper {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      .car_information {
+        flex: 1;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        .buy {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 50px;
+          .price {
+            font-size: 32px;
+            color: rgb(45, 215, 45);
+          }
+          button {
+            box-shadow: 0 0 10px;
+            border: 0;
+            border-radius: 13px;
+            padding: 10px 20px;
+          }
+
+          .removeCartBtn { 
+            display: none;
+          }
+        }
+      }
+      img {
+        border: 2px solid rgba(0, 0, 0, 0.419);
+        border-radius: 8px;
+        flex: 1;
+        object-fit: contain;
+        height: 375px;
+        width: 600px;
+      }
+    }
+  }
+}
