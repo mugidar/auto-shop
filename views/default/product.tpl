@@ -10,13 +10,14 @@
         </div>
         <div class="buy">
           <span class="price">{$rsProduct['price']}$</span
-          >
-          <button onclick="addToCart({$rsProduct['id']})" id="addCart_{$rsProduct['id']}" class="addCartBtn">
-            Додати до придбання
-          </button>
-          <button id="removeCart_{$rsProduct['id']}" class="removeCartBtn">
+          > 
+          <button {if !$itemInCart} class="hideme" {/if}   onclick="removeFromCart({$rsProduct['id']})" id="removeCart_{$rsProduct['id']}" >
            Видалити зі списку
           </button>
+          <button {if $itemInCart} class="hideme" {/if} onclick="addToCart({$rsProduct['id']})" id="addCart_{$rsProduct['id']}" >
+            Додати до придбання
+          </button>
+         
         </div>
       </div>
     </div>

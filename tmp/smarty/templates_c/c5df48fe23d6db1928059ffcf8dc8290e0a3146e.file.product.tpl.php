@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-13 17:12:41
+<?php /* Smarty version Smarty-3.1.6, created on 2023-04-16 23:24:39
          compiled from "../views/default\product.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12935012116436c98f8d0d08-33014458%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c5df48fe23d6db1928059ffcf8dc8290e0a3146e' => 
     array (
       0 => '../views/default\\product.tpl',
-      1 => 1681395141,
+      1 => 1681676678,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'rsProduct' => 0,
+    'itemInCart' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -39,16 +40,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="buy">
           <span class="price"><?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['price'];?>
 $</span
-          >
-          <button onclick="addToCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
-)" id="addCart_<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
-" class="addCartBtn">
-            Додати до придбання
-          </button>
-          <button id="removeCart_<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
-" class="removeCartBtn">
+          > 
+          <button <?php if (!$_smarty_tpl->tpl_vars['itemInCart']->value){?> class="hideme" <?php }?>   onclick="removeFromCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
+)" id="removeCart_<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
+" >
            Видалити зі списку
           </button>
+          <button <?php if ($_smarty_tpl->tpl_vars['itemInCart']->value){?> class="hideme" <?php }?> onclick="addToCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
+)" id="addCart_<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
+" >
+            Додати до придбання
+          </button>
+         
         </div>
       </div>
     </div>

@@ -202,13 +202,20 @@ footer {
   color: rgb(45, 215, 45);
 }
 .car_page .car_info .car_info_wrapper .car_information .buy button {
+  z-index: 9999;
+  user-select: none;
+  cursor: pointer;
   box-shadow: 0 0 10px;
   border: 0;
   border-radius: 13px;
   padding: 10px 20px;
+  transition: 0.4s;
 }
-.car_page .car_info .car_info_wrapper .car_information .buy .removeCartBtn {
-  display: none;
+.car_page .car_info .car_info_wrapper .car_information .buy button:hover {
+  background-color: #888888;
+}
+.car_page .car_info .car_info_wrapper .car_information .buy button:active {
+  background-color: #6f6f6f;
 }
 .car_page .car_info .car_info_wrapper img {
   border: 2px solid rgba(0, 0, 0, 0.419);

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-13 16:51:32
+<?php /* Smarty version Smarty-3.1.6, created on 2023-04-20 18:28:20
          compiled from "../views/default\leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:50694f68d958b3de87-05074239%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd86026e14cd6d235743b3882c7fc10799a2fe413' => 
     array (
       0 => '../views/default\\leftcolumn.tpl',
-      1 => 1681393891,
+      1 => 1682004499,
       2 => 'file',
     ),
   ),
@@ -59,11 +59,32 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
       </li>
     </ul>
 
+
+   <div class="registerBox">
+        <div class="menuCaption showHidden">Register</div>
+        <div class="registerBoxHidden">
+          <label>
+            Email: <input value="dada@gmail.com" type="email" id="email" name="email">
+          </label>
+          <label>
+            Password: <input value="dada" type="password" id="pwd1" name="pwd1">
+          </label>
+          <label>
+            Again: <input value="dada" type="password" id="pwd2" name="pwd2">
+          </label>
+          <label>
+            <input type="submit" onclick="registerNewUser()" value="Register">
+          </label>
+        </div>
+      </div>
+    
+    
+
+
     <div class="cart">
       <h1>Кошик</h1>
       <a href="/cart/" title="To cart">В кошику</a>
       <span id="cartCntItems">
-
         <?php if ($_smarty_tpl->tpl_vars['cartCntItems']->value>0){?><?php echo $_smarty_tpl->tpl_vars['cartCntItems']->value;?>
  <?php }else{ ?> 0 <?php }?>
       </span>

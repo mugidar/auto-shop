@@ -19,11 +19,32 @@
       </li>
     </ul>
 
+
+   <div class="registerBox">
+        <div class="menuCaption showHidden">Register</div>
+        <div class="registerBoxHidden">
+          <label>
+            Email: <input value="dada@gmail.com" type="email" id="email" name="email">
+          </label>
+          <label>
+            Password: <input value="dada" type="password" id="pwd1" name="pwd1">
+          </label>
+          <label>
+            Again: <input value="dada" type="password" id="pwd2" name="pwd2">
+          </label>
+          <label>
+            <input type="submit" onclick="registerNewUser()" value="Register">
+          </label>
+        </div>
+      </div>
+    
+    
+
+
     <div class="cart">
       <h1>Кошик</h1>
       <a href="/cart/" title="To cart">В кошику</a>
       <span id="cartCntItems">
-
         {if $cartCntItems > 0}{$cartCntItems} {else} 0 {/if}
       </span>
     </div>
