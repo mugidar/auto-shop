@@ -5,7 +5,7 @@
   </head>
   {$pageTitle}
   <body>
-    <h1>Головна сторінка</h1>
+    <h1>Головна сторінка ({count($rsProducts)} оголошень)</h1>
     <div class="items_wrapper">
       {foreach $rsProducts as $item }
 

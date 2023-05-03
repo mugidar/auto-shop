@@ -41,6 +41,10 @@ $card_item_height: 270px;
   margin: 0;
 }
 header {
+   height: 120px;
+  text-align: center;
+  background-color: gray;
+  box-shadow: 0 0 10px black;
   padding: 20px 0;
 }
 body {
@@ -63,13 +67,6 @@ footer {
 
 .hideme {
   display: none;
-}
-
-#header {
-  height: 70px;
-  text-align: center;
-  background-color: gray;
-  box-shadow: 0 0 10px black;
 }
 
 #leftMenu,
@@ -220,5 +217,72 @@ footer {
         width: 600px;
       }
     }
+  }
+}
+
+#cart_page {
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  div {
+    table {
+      thead {
+        text-align: center;
+      }
+      td {
+        padding: 0 10px;
+        
+      }
+
+      .action_btn {
+        width: 200px;
+      }
+      tbody {
+        tr {
+        text-align: center;
+          transition: .2s ease-in;
+          &:hover {
+            background-color: rgba(128, 128, 128, 0.453);
+          }
+        }
+      }
+      img {
+        background-color: gray;
+        width: 100px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid black;
+        padding: 5px 15px;
+        border-radius: 8px;
+        transition: 0.4s ease;
+
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.154);
+        }
+      }
+    }
+  }
+}
+
+
+#logo {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 0 10px white);
+  transition: .4s;
+  
+  &:hover {
+    filter: drop-shadow(0 0 10px pink);
+  }
+  &:active {
+    filter: drop-shadow(0 0 10px purple);
   }
 }

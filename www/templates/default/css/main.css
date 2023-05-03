@@ -12,6 +12,10 @@
 }
 
 header {
+  height: 120px;
+  text-align: center;
+  background-color: gray;
+  box-shadow: 0 0 10px black;
   padding: 20px 0;
 }
 
@@ -36,13 +40,6 @@ footer {
 
 .hideme {
   display: none;
-}
-
-#header {
-  height: 70px;
-  text-align: center;
-  background-color: gray;
-  box-shadow: 0 0 10px black;
 }
 
 #leftMenu,
@@ -224,6 +221,58 @@ footer {
   object-fit: contain;
   height: 375px;
   width: 600px;
+}
+
+#cart_page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#cart_page div table thead {
+  text-align: center;
+}
+#cart_page div table td {
+  padding: 0 10px;
+}
+#cart_page div table .action_btn {
+  width: 200px;
+}
+#cart_page div table tbody tr {
+  text-align: center;
+  transition: 0.2s ease-in;
+}
+#cart_page div table tbody tr:hover {
+  background-color: rgba(128, 128, 128, 0.453);
+}
+#cart_page div table img {
+  background-color: gray;
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+}
+#cart_page div table button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 5px 15px;
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+#cart_page div table button:hover {
+  background-color: rgba(0, 0, 0, 0.154);
+}
+
+#logo {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 0 10px white);
+  transition: 0.4s;
+}
+#logo:hover {
+  filter: drop-shadow(0 0 10px pink);
+}
+#logo:active {
+  filter: drop-shadow(0 0 10px purple);
 }
 
 /*# sourceMappingURL=main.css.map */

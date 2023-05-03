@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-20 18:28:20
+<?php /* Smarty version Smarty-3.1.6, created on 2023-04-30 13:05:26
          compiled from "../views/default\leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:50694f68d958b3de87-05074239%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd86026e14cd6d235743b3882c7fc10799a2fe413' => 
     array (
       0 => '../views/default\\leftcolumn.tpl',
-      1 => 1682004499,
+      1 => 1682849125,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'rsCategories' => 0,
     'item' => 0,
     'itemChild' => 0,
+    'arUser' => 0,
     'cartCntItems' => 0,
   ),
   'has_nocache_code' => false,
@@ -59,10 +60,29 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
       </li>
     </ul>
 
+    <?php if (isset($_smarty_tpl->tpl_vars['arUser']->value)){?> 
+    <div id="userBox">
+      <a href="/user/" id="userLink"><?php echo $_smarty_tpl->tpl_vars['arUser']->value['displayName'];?>
+</a>
+      <a href="/user/logout/" onclick="logout()">Log out</a>
+    </div>
+
+    <?php }else{ ?>
+    <div id="userBox" class="hideme">
+      <a href="#" id="userLink"></a>
+      <a href="/user/logout/" onclick="logout()">Log out</a>
+    </div>
+
+    <div id="loginBox">
+      <div class="menuCaption">Login</div>
+      <input type="text" id="loginEmail" name="loginEmail" value="">
+      <input type="password" id="loginPwd" name="loginPwd" value="">
+      <input onclick="login()" type="button" value="Log in">
+    </div>
 
    <div class="registerBox">
-        <div class="menuCaption showHidden">Register</div>
-        <div class="registerBoxHidden">
+        <div class="menuCaption showHidden" onclick="showRegisterBox()">Register</div>
+        <div class="registerBoxHidden hideme">
           <label>
             Email: <input value="dada@gmail.com" type="email" id="email" name="email">
           </label>
@@ -79,11 +99,11 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
       </div>
     
     
-
+<?php }?>
 
     <div class="cart">
       <h1>Кошик</h1>
-      <a href="/cart/" title="To cart">В кошику</a>
+      <a href="/cart/" title="To cart">В автопарку</a>
       <span id="cartCntItems">
         <?php if ($_smarty_tpl->tpl_vars['cartCntItems']->value>0){?><?php echo $_smarty_tpl->tpl_vars['cartCntItems']->value;?>
  <?php }else{ ?> 0 <?php }?>

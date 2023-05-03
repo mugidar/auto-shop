@@ -13,7 +13,9 @@
   </head>
   <body>
     <header id="header">
-      <h1><a href="/">АВТІВОЧКА</a></h1>
+     <a href="/">
+      <img id="logo" draggable="false"  src="/assets/img/logo.png" alt="">
+     </a>
     </header>
     <main>
     {include file='leftcolumn.tpl'}

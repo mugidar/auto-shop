@@ -7,6 +7,8 @@
         <div class="description">
           <h2>Опис:</h2>
           <p>{$rsProduct['description']}</p>
+          <h3>Номер власника:</h3>
+          <span></span><a href="tel:{$rsProduct['seller_tel']}">{$rsProduct['seller_tel']} </a>-  {$rsProduct['seller_name']} </span>
         </div>
         <div class="buy">
           <span class="price">{$rsProduct['price']}$</span

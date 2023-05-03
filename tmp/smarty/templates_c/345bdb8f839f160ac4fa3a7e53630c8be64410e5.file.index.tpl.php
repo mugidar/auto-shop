@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-13 16:39:28
+<?php /* Smarty version Smarty-3.1.6, created on 2023-05-01 21:48:54
          compiled from "../views/default\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:39854f65b704435a20-76434617%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '345bdb8f839f160ac4fa3a7e53630c8be64410e5' => 
     array (
       0 => '../views/default\\index.tpl',
-      1 => 1681393161,
+      1 => 1682966910,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 
   <body>
-    <h1>Головна сторінка</h1>
+    <h1>Головна сторінка (<?php echo count($_smarty_tpl->tpl_vars['rsProducts']->value);?>
+ оголошень)</h1>
     <div class="items_wrapper">
       <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['rsProducts']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

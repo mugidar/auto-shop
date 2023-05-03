@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-13 16:46:44
+<?php /* Smarty version Smarty-3.1.6, created on 2023-05-03 12:02:23
          compiled from "../views/default\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:95724f68d95829a6e4-54800566%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9797888b337e03f99b06385b60a372bbb52d5e02' => 
     array (
       0 => '../views/default\\header.tpl',
-      1 => 1681393604,
+      1 => 1683104543,
       2 => 'file',
     ),
   ),
@@ -39,7 +39,9 @@ css/main.css"
   </head>
   <body>
     <header id="header">
-      <h1><a href="/">АВТІВОЧКА</a></h1>
+     <a href="/">
+      <img id="logo" draggable="false"  src="/assets/img/logo.png" alt="">
+     </a>
     </header>
     <main>
     <?php echo $_smarty_tpl->getSubTemplate ('leftcolumn.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

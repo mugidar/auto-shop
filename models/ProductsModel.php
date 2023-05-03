@@ -4,7 +4,7 @@ function getLastProducts($limit = null) {
     global $db;
 
     $sql = "SELECT *
-    FROM `products`
+    FROM `cars`
     ORDER BY id DESC";
     
     if($limit) {
@@ -22,7 +22,7 @@ function getProductsByCat($itemId) {
     $itemId = intval($itemId);
 
     $sql = "SELECT *
-    FROM `products`
+    FROM `cars`
     WHERE category_id = {$itemId}";
     
     $rs = mysqli_query($db,$sql);
@@ -35,7 +35,7 @@ function getProductById($itemId) {
     $itemId = intval($itemId);
     
     $sql = "SELECT * 
-    FROM `products` 
+    FROM `cars` 
     WHERE id = '$itemId'";
     
     $rs = mysqli_query($db, $sql);
@@ -53,10 +53,33 @@ function getProductsFromArray($itemsIds) {
     $strIds = implode($itemsIds, ', ');
     
     $sql = "SELECT * 
-    FROM `products` 
+    FROM `cars` 
     WHERE id in ({$strIds})";
 
     $rs = mysqli_query($db, $sql);
   
     return createSmartyRsArray($rs);
+}
+
+function getProducts() {
+    global $db;
+    $sql = "SELECT * 
+    FROM `cars` ORDER BY category_id";
+    
+    $rs = mysqli_query($db, $sql);
+
+    return createSmartyRsArray($rs);
+}
+function insertProduct($itemName,$itemPrice, $itemDesc, $itemCat) {
+    global $db;
+    $sql = "INSERT INTO cars SET
+      `name` = '{$itemName}',
+      `price` = '{$itemPrice}',
+      `description` = '{$itemDesc}',
+      `category_id` = '{$itemCat}'
+      ";
+    
+    $rs = mysqli_query($db, $sql);
+   
+    return $rs;
 }
