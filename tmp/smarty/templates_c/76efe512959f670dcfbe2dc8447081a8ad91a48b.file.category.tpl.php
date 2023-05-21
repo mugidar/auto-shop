@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-12 17:57:54
+<?php /* Smarty version Smarty-3.1.6, created on 2023-05-07 22:42:45
          compiled from "../views/default\category.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:203575915064369ca41c3c96-48185579%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '76efe512959f670dcfbe2dc8447081a8ad91a48b' => 
     array (
       0 => '../views/default\\category.tpl',
-      1 => 1681311474,
+      1 => 1683488564,
       2 => 'file',
     ),
   ),
@@ -47,6 +47,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
  <span class="price"><?php echo $_smarty_tpl->tpl_vars['item']->value['price'];?>
 $</span>
     </p>
+    <?php if ($_smarty_tpl->tpl_vars['item']->value['sold']==1){?> ПРОДАНО <?php }?>
   </a>
   <?php } ?> 
   </div>
@@ -62,6 +63,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
       <a href="/category/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 /"><?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
  </a>
+      
     </h2>
   
   <?php } ?></div>

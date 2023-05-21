@@ -1,0 +1,131 @@
+h1 {
+  text-align: center;
+}
+
+#cars_table {
+  width: 100%;
+  #upload {
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+  }
+  thead {
+    margin: auto;
+  }
+  tr {
+    td {
+      img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+      }
+      padding: 10px;
+      input {
+        font-size: 16px;
+      }
+      input[type="button"] {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+    }
+
+    .sold {
+      width: 30px;
+      text-align: center;
+    }
+  }
+}
+body {
+  position: relative;
+}
+#leftColumn {
+  right: 10px;
+  top: 20px;
+  position: fixed;
+  display: flex;
+  #leftMenu {
+    border-radius: 8px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.339);
+    font-size: 24px;
+
+    display: flex;
+    flex-direction: column;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  table {
+    font-size: 24px;
+  }
+}
+caption {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#create_car {
+  margin: auto;
+}
+
+.main_menu {
+  border-radius: 15px;
+  padding: 40px;
+  background-color: rgba(123, 123, 123, 0.44);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+
+  input[type="button"] {
+    padding: 15px 0;
+  }
+}
+
+.switch_btns {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0;
+    padding: 20px 30px;
+
+    transition: 0.4s;
+    &:hover {
+      background-color: rgba(128, 128, 128, 0.374);
+    }
+    &:active {
+      background-color: rgba(40, 40, 40, 0.934);
+    }
+
+    &:first-child {
+      border-bottom-left-radius: 12px;
+      border-top-left-radius: 12px;
+    }
+    &:last-child {
+      border-bottom-right-radius: 12px;
+      border-top-right-radius: 12px;
+      border-left: none;
+    }
+
+    &.active {
+      background-color: rgba(108, 108, 108, 0.58);
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

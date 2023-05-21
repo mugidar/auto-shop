@@ -9,6 +9,7 @@
     <p href="/car/{$item['id']}/">
       {$item['name']} <span class="price">{$item['price']}$</span>
     </p>
+    {if $item['sold'] == 1} ПРОДАНО {/if}
   </a>
   {/foreach } 
   </div>
@@ -18,6 +19,7 @@
   
     <h2 class="general_category">
       <a href="/category/{$item['id']}/">{$item['name']} </a>
+      
     </h2>
   
   {/foreach}</div>

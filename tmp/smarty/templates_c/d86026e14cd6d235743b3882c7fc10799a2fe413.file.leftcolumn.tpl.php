@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2023-04-30 13:05:26
+<?php /* Smarty version Smarty-3.1.6, created on 2023-05-09 16:39:08
          compiled from "../views/default\leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:50694f68d958b3de87-05074239%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd86026e14cd6d235743b3882c7fc10799a2fe413' => 
     array (
       0 => '../views/default\\leftcolumn.tpl',
-      1 => 1682849125,
+      1 => 1683639543,
       2 => 'file',
     ),
   ),
@@ -64,36 +64,36 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
     <div id="userBox">
       <a href="/user/" id="userLink"><?php echo $_smarty_tpl->tpl_vars['arUser']->value['displayName'];?>
 </a>
-      <a href="/user/logout/" onclick="logout()">Log out</a>
+      <a href="/user/logout/" onclick="logout()">Вихід</a>
     </div>
 
     <?php }else{ ?>
     <div id="userBox" class="hideme">
       <a href="#" id="userLink"></a>
-      <a href="/user/logout/" onclick="logout()">Log out</a>
+      <a href="/user/logout/" onclick="logout()">Вихід</a>
     </div>
 
     <div id="loginBox">
-      <div class="menuCaption">Login</div>
-      <input type="text" id="loginEmail" name="loginEmail" value="">
-      <input type="password" id="loginPwd" name="loginPwd" value="">
+      <div class="menuCaption">Вхід</div>
+      <input   placeholder="Логін" type="text" id="loginEmail" name="loginEmail" value="">
+      <input placeholder="Пароль"  type="password" id="loginPwd" name="loginPwd" value="">
       <input onclick="login()" type="button" value="Log in">
     </div>
 
    <div class="registerBox">
-        <div class="menuCaption showHidden" onclick="showRegisterBox()">Register</div>
+        <div class="menuCaption showHidden" onclick="showRegisterBox()">Реєстрація</div>
         <div class="registerBoxHidden hideme">
           <label>
-            Email: <input value="dada@gmail.com" type="email" id="email" name="email">
+            Пошта: <input  placeholder="Е-мейл" value="" type="email" id="email" name="email">
           </label>
           <label>
-            Password: <input value="dada" type="password" id="pwd1" name="pwd1">
+            Пароль: <input placeholder="Пароль" value="" type="password" id="pwd1" name="pwd1">
           </label>
           <label>
-            Again: <input value="dada" type="password" id="pwd2" name="pwd2">
+            Повторіть пароль: <input value="" placeholder="Повторіть пароль" type="password" id="pwd2" name="pwd2">
           </label>
           <label>
-            <input type="submit" onclick="registerNewUser()" value="Register">
+            <input type="submit" onclick="registerNewUser()" value="Зареєструватися">
           </label>
         </div>
       </div>
@@ -102,7 +102,7 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
 <?php }?>
 
     <div class="cart">
-      <h1>Кошик</h1>
+      <h1>Підбір</h1>
       <a href="/cart/" title="To cart">В автопарку</a>
       <span id="cartCntItems">
         <?php if ($_smarty_tpl->tpl_vars['cartCntItems']->value>0){?><?php echo $_smarty_tpl->tpl_vars['cartCntItems']->value;?>

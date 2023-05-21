@@ -84,15 +84,19 @@ function carsAction($smarty) {
     loadTemplate($smarty, 'adminHeader');
     loadTemplate($smarty, 'adminCars');
     loadTemplate($smarty, 'adminFooter');
+
 }
 function addProductAction() {
     $itemName  = $_POST['itemName'];
     $itemPrice  = $_POST['itemPrice'];
     $itemDesc  = $_POST['itemDesc'];
     $itemCat  = $_POST['itemCatId'];
+    $itemImg  = $_POST['itemImg'];
+    $itemSellerName  = $_POST['itemSellerName'];
+    $itemSellerTel  = $_POST['itemSellerTel'];
     
- $res = insertProduct($itemName, $itemPrice, $itemDesc, $itemCat);
-
+    $res = insertProduct($itemName, $itemPrice, $itemDesc, $itemCat, $itemImg,$itemSellerName,$itemSellerTel);
+   
       if($res) {
           $resData['success'] = 1;
           $resData['message'] = "Car added";
@@ -103,4 +107,59 @@ function addProductAction() {
   
       echo json_encode($resData);
       return;
+}
+
+function updateProductAction() {
+    $itemId  = $_POST['itemId'];
+    $itemName  = $_POST['itemName'];
+    $itemPrice  = $_POST['itemPrice'];
+    $itemDesc  = $_POST['itemDesc'];
+    $itemCat  = $_POST['itemCatId'];
+    $itemSellerName  = $_POST['itemSellerName'];
+    $itemSellerTel  = $_POST['itemSellerTel'];
+    $itemSoldStatus  = $_POST['itemSoldStatus'];
+
+    $res = updateProduct($itemId, $itemName, $itemPrice, $itemDesc, $itemCat, null ,$itemSellerName, $itemSellerTel,$itemSoldStatus);
+
+      if($res) {
+          $resData['success'] = 1;
+          $resData['message'] = "Car edited";
+      }else { 
+          $resData['success'] = 0;
+          $resData['message'] = "Error add";
+      }
+  
+      echo json_encode($resData);
+      return;
+}
+
+
+
+function uploadAction() {
+    $maxSize = 2 * 1024 * 1024;
+
+    $itemId = $_POST['itemId'];
+
+    $ext = pathinfo($_FILES['filename']['name'], PATHINFO_EXTENSION);
+
+    $newFileName = $itemId . "." . $ext;
+
+    if($_FILES['filename']['size'] > $maxSize){ 
+        echo "Big size";
+        return;
+    }
+
+    if(is_uploaded_file($_FILES['filename']['tmp_name'])) {
+        $res = move_uploaded_file($_FILES['filename']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/assets/img/' . $newFileName);
+        if($res) {
+            $res = updateProductImage($itemId, $newFileName);
+            if($res) {
+                redirect('/admin/cars/');
+            }
+        }
+    }else {
+        echo "Error";
+    }
+
+ 
 }

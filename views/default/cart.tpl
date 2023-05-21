@@ -13,7 +13,7 @@
   <td>Номер власника</td>
   <td>Дія</td>
 </tr></thead>
-<tbody>
+<tbody id="autopark">
   {foreach $rsProducts as $item name=products}
   <tr>
     <td>{$smarty.foreach.products.iteration}</td>

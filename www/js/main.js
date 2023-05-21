@@ -1,3 +1,10 @@
+document.addEventListener("dblclick", (e) => {
+  if (e.target.id === "hint") {
+    console.log("double");
+    window.open("http://car-shop/admin/", "_blank");
+  }
+});
+
 function addToCart(itemId) {
   console.log("js - addToCart");
   $.ajax({
@@ -49,30 +56,70 @@ function getData(form) {
   return hData;
 }
 
+function validation(email, pwd1, pwd2) {
+
+  let errorMsgs = {}
+
+  if(email.trim() === "") {
+    errorMsgs["email"] = "Empty email"
+    return errorMsgs
+  }
+  if(pwd1.trim() === "") {
+    errorMsgs["pwd1"]  = "Pwd1 empty"
+    return errorMsgs
+  }
+  if(pwd2.trim() === "") {
+    errorMsgs["pwd2"]  = "Pwd2 empty"
+    return errorMsgs
+  }
+  else if(pwd1 !== pwd2) {
+    errorMsgs["pwd"]  = "Pwd1 doesn't match pwd2"
+    return errorMsgs 
+  }
+  return true
+}
+
 function registerNewUser() {
   const box = document.querySelector(".registerBoxHidden");
+  const inputs = box.querySelectorAll("input");
   const formData = box.querySelectorAll("input");
   const postData = getData(formData);
 
-  $.ajax({
-    url: "/user/register/",
-    dataType: "json",
-    data: postData,
-    async: true,
-    type: "POST",
-    success: function (data, err) {
-      if (data["success"]) {
-        $(".registerBox").hide();
-        $("#userLink").attr("href", "/user/");
-        $("#userLink").html(data["userName"]);
-        $("#userBox").show();
-        $("#loginBox").hide();
-        $("#btnSaveOrder").show();
-      } else {
-        console.log(data["message"]);
+
+  const { email, pwd1, pwd2 } = postData;
+  const isValid =Object.values( validation(email, pwd1, pwd2)) == 0;
+  const msgs = validation(email,pwd1,pwd2)
+  console.log(inputs)
+
+  if (isValid) {
+    $.ajax({
+      url: "/user/register/",
+      dataType: "json",
+      data: postData,
+      async: true,
+      type: "POST",
+      success: function (data, err) {
+        if (data["success"]) {
+          inputs.forEach((input) => {
+            if(input.type != "submit") {
+              input.value = ""
+            }
+          })
+          $(".registerBox").hide();
+          $("#userLink").attr("href", "/user/");
+          $("#userLink").html(data["userName"]);
+          $("#userBox").show();
+          $("#loginBox").hide();
+          $("#btnSaveOrder").show();
+        } else {
+          console.log(data["message"]);
+        }
       }
-    }
-  });
+    });
+   
+  } else {
+  alert(Object.values(msgs))
+  }
 }
 
 function login() {
@@ -126,7 +173,6 @@ function updateUserData() {
     pwd2: pwd2,
     curPwd: curPwd
   };
-  
 
   $.ajax({
     type: "POST",
@@ -135,7 +181,7 @@ function updateUserData() {
     data: postData,
     dataType: "json",
     success: function (data) {
-      console.log(data)
+      console.log(data);
       if (data["success"]) {
         $("#userLink").html(data["userName"]);
         console.log(data["message"]);
